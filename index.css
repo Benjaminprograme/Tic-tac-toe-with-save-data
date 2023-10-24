@@ -9,6 +9,8 @@ body{
     width: 300px;
     height: 300px;
     margin: auto;
+    margin-left: 40%;
+    text-align: center;
 }
 
 .Block{
@@ -18,4 +20,75 @@ body{
     height: 94px;
     border-style: solid;
     border-color: aliceblue;
+    text-align: center;
+    font-size: 100px;
+    font-family: 'Courier New', Courier, monospace;
+   
+  }
+.Block:hover{
+    background-color: rgb(122, 136, 149);
+    display: inline;
+    width: 94px;
+    height: 94px;
+    border-style: solid;
+    border-color: rgb(0, 136, 255);
+    opacity: 50%;
+  }
+  .Block:active{
+    background-color: black;
+  }
+
+  #Player-data{
+    margin-top: 15px;
+    background-color: blanchedalmond;
+    text-align:center ;
+    display: inline-block;
+    margin: auto;
+    margin-left: 40%;
+    margin-top: 10%;
+  }
+  .Player-info{
+    font-size: xx-large;
+    display:inline;
+  }
+  #Playing-info{
+    color: brown;
+  }
+#Win-lose-data{
+    background-color: rgb(171, 171, 171);
+    text-align:center ;
+     margin: auto;
+    width: 200px;
+    border-style: solid;
+    border-color: aquamarine;
+    border-radius: 5px;
+    }
+.winLoseData-draw{
+    text-align: center;
+    font-size:xx-large;
+    color: brown;
+  }
+
+  #Info-text{
+    font-family: 'Courier New', Courier, monospace;
+
+  }
+  
+  #Rounde-history{
+  border-style: solid;
+border-color: bisque;
+}
+
+  .Number-of-rounde{
+    display: inline;
+    border-style: solid;
+    font-size: xx-large;
+    background-color: aliceblue;
+  }
+
+  .Winner-of-rounde{
+    display: inline;
+    border-style: solid;
+    font-size: x-large;
+    background-color: aliceblue;
   }
