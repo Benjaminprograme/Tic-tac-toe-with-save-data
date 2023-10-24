@@ -1,0 +1,21 @@
+body{
+    background-color: black;
+}
+
+#board{
+    background-color: aliceblue;
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+    height: 300px;
+    margin: auto;
+}
+
+.Block{
+    background-color: rgb(122, 136, 149);
+    display: inline;
+    width: 94px;
+    height: 94px;
+    border-style: solid;
+    border-color: aliceblue;
+  }
