@@ -1,12 +1,16 @@
 {
-  "roundeData":[
-  {
-    "number":1,
-    "winner":"O"
+  "roundeData": [
+    {
+      "number": 1,
+      "winner": "O"
     },
-  {
-    "number":2,
-    "winner":null
+    {
+      "number": 2,
+      "winner": null
+    },
+    {
+      "number": 3,
+      "winner": "X"
     }
   ]
-  }
+}

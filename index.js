@@ -91,29 +91,41 @@ function checkTheSymbols() {
       }
       }
 //Ajax learning
-let historyToRead=2;
-const roundeHistoryBoard = document.getElementById("Rounde-history");
-const winnerOfRounde = document.getElementsByClassName("Winner-of-rounde");
+let historyToRead=3;
+const history = document.getElementById("Rounde-history");
+const winnerDisplay = document.getElementsByClassName("Winner-of-rounde");
 const numberOfRounde = document.getElementsByClassName("Number-of-rounde");
 const xttp = new XMLHttpRequest();
 const url = "http://localhost:3000/roundeData";
-
+//Get the history
 xttp.open("GET", url, true);
 xttp.send();
+//Add to history
+let newRoundeObj = {
+  number:4,
+  winner:"X"
+}
+let xhr = new XMLHttpRequest()
+let newRounde = JSON.stringify(newRoundeObj)
+xhr.open('POST', url, true)
+xhr.setRequestHeader('Content-type', 'application/json; charset=UTF-8')
+xhr.send(newRounde);
 
+//Display history
 xttp.onload =readHistory;
 
 function readHistory() {
   for(i=0;i<historyToRead;i++){
   if (xttp.status === 200) {
     try {
+
 const creatNumberOfRoundeText=document.createElement("div");
 creatNumberOfRoundeText.className="Number-of-rounde"
-roundeHistoryBoard.appendChild(creatNumberOfRoundeText);
+history.appendChild(creatNumberOfRoundeText);
 
 const creatWinnerOfRoundeText=document.createElement("div");
 creatWinnerOfRoundeText.className="Winner-of-rounde"
-roundeHistoryBoard.appendChild(creatWinnerOfRoundeText);
+history.appendChild(creatWinnerOfRoundeText);
 
 
 
@@ -121,15 +133,20 @@ roundeHistoryBoard.appendChild(creatWinnerOfRoundeText);
       let roundeNumber = roundeHistoryData[i].number;
       let winnerData = roundeHistoryData[i].winner;
       
+
       numberOfRounde[i].innerText = roundeNumber + ".";
       if (winnerData !== null) {
-        winnerOfRounde[i].innerText = "The winner was: " + winnerData;
+        winnerDisplay[i].innerText = "The winner was: " + winnerData;
      } else {
-        winnerOfRounde[i].innerText = "Draw";}} 
+        winnerDisplay[i].innerText = "Draw";}} 
         catch (error) {
       alert("There was an error in reading JSON: "+error+". Status is: "+xttp.status);
       }}
-    
-    } }
+    }}
+
+   
+
+
+
 
       
